@@ -9,6 +9,8 @@ class ItemCard extends Component {
         <img src={this.props.image_url} alt={this.props.name}/>
         { this.props.name }
         { this.props.price }
+        <button>Add to cart</button>
+        <button>Remove from cart</button>
       </div>
     );
   }
