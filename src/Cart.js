@@ -9,8 +9,8 @@ class Cart extends Component {
   render() {
     return (
       <div className="Cart">
-        <ProductList />
-        <DiscountForm />
+        {/* <ProductList />
+        <DiscountForm /> */}
       </div>
     );
   }

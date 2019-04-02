@@ -1,0 +1,12 @@
+.ItemCard {
+    align-content: center;
+    border: black;
+    border-style: solid;
+    margin: 5px;
+    padding: 5px;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+}
