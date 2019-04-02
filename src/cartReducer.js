@@ -4,11 +4,13 @@ function rootReducer(state = INITIAL_STATE, action) {
  switch (action.type) {
    case "ADD":
      return { ...state, 
-              cart: [ ...state.cart ]
+              cart: [ ...state.cart, action.payload ]
         };
 
    case "REMOVE":
-     return { ...state, count: state.count - 1 };
+     return { ...state,
+              cart: state.cart.filter( i => i.id !== action.payload.id ) 
+        };
 
    default:
      return state;
