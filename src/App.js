@@ -7,7 +7,8 @@ import Header from './Header';
 import Cart from './Cart';
 import Home from './Home';
 
-import { BrowserRouter, Route } from 'react-router-dom';
+import { addItem, removeItem } from "./actions";
+import { connect } from "react-redux";
 
 class App extends Component {
   render() {
@@ -21,4 +22,13 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state){
+  return {
+    items: state.items
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  { addItem, removeItem }
+)(App);

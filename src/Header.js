@@ -6,7 +6,7 @@ class Header extends Component {
   render() {
     return (
       <div className="Header">
-        "header"
+        add items in cart
       </div>
     );
   }
