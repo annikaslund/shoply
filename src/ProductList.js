@@ -6,7 +6,7 @@ class ProductList extends Component {
   render() {
     return (
       <div className="ProductList">
-        "look at all these products"
+        
       </div>
     );
   }

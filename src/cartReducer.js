@@ -1,13 +1,14 @@
+import { ADD, REMOVE } from "./actionTypes";
 const INITIAL_STATE = { cart: [] };
 
 function rootReducer(state = INITIAL_STATE, action) {
  switch (action.type) {
-   case "ADD":
+   case ADD:
      return { ...state, 
               cart: [ ...state.cart, action.payload ]
         };
 
-   case "REMOVE":
+   case REMOVE:
      return { ...state,
               cart: state.cart.filter( i => i.id !== action.payload.id ) 
         };
