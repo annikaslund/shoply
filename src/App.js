@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from "react-redux";
 
 import './App.css';
@@ -26,10 +26,11 @@ class App extends Component {
                 totalNumber={totalNumber}
                 totalPrice={totalPrice}
                 />
-            <Switch />
-              <Route path="/" render={()=> <Home />} />
-              <Route path="/cart" render={()=> <Cart />} />
-            <Switch />
+            <Switch>
+              <Route exact path="/" render={(rtProps)=> <Home rtProps={rtProps}/>} />
+              <Route exact path="/cart" render={(rtProps)=> <Cart rtProps={rtProps}/>} />
+              <Redirect to="/" />
+            </Switch>
           </div>
     );
   }

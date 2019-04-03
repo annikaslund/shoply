@@ -8,7 +8,7 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-        <ProductList />
+        <ProductList {...this.props.rtProps} />
       </div>
     );
   }
