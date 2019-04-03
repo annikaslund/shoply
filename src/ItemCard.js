@@ -4,6 +4,7 @@ import './ItemCard.css';
 
 class ItemCard extends Component {
     render() {
+        console.log("THIS IS THE KEYYY",this.props.key)
         return (
             <div className="ItemCard">
                 <h4>{this.props.name}</h4>
@@ -13,8 +14,8 @@ class ItemCard extends Component {
                 <div id="item-info">
                     {this.props.price}
                 </div>
-                <button>Add to cart</button>
-                <button>Remove from cart</button>
+                <button onClick={this.props.handleAddCard}>ADD</button>
+                <button onClick={this.props.handleRemoveCard}>REMOVE</button>
             </div>
         );
     }

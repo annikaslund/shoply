@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-// import './Home.css';
-
 import ProductList from './ProductList';
 import DiscountForm from './DiscountForm';
 

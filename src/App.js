@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ReactDOM from "react-dom";
+import { Switch, Route } from 'react-router-dom';
+import { connect } from "react-redux";
 
 import './App.css';
 
@@ -7,28 +8,40 @@ import Header from './Header';
 import Cart from './Cart';
 import Home from './Home';
 
-import { addItem, removeItem } from "./actions";
-import { connect } from "react-redux";
-
 class App extends Component {
+
   render() {
+
+    const totalPrice = this.props.cart.reduce(
+                      (price, item)=> {
+                      return price+(item.price*item.count)}, 0);
+
+    const totalNumber = this.props.cart.reduce(
+                      (acc, item)=> {
+                      return acc+item.count}, 0);
+
     return (
-          <div className="App">
-            <Header />
-            <Cart />
-            <Home />
+          <div className="App">                          
+            <Header 
+                totalNumber={totalNumber}
+                totalPrice={totalPrice}
+                />
+            <Switch />
+              <Route path="/" render={()=> <Home />} />
+              <Route path="/cart" render={()=> <Cart />} />
+            <Switch />
           </div>
     );
   }
 }
 
 function mapStateToProps(state){
+
   return {
-    items: state.items
+    cart: state.cart
   }
 }
 
 export default connect(
-  mapStateToProps,
-  { addItem, removeItem }
+  mapStateToProps
 )(App);

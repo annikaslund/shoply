@@ -4,9 +4,15 @@
     border-style: solid;
     margin: 5px;
     padding: 5px;
+    /* max-height: 100px; */
+    /* max-width: 100px; */
+    /* display: block; */
 }
 
+#item-image {
+    display: block;
+}
 img {
-    height: 200px;
-    width: 200px;
+    max-height: 50px;
+    max-width: 50px;
 }
